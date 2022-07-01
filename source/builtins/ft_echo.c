@@ -6,7 +6,7 @@
 /*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 04:27:31 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/07/01 15:32:13 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/07/01 20:22:23 by oufisaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_echo(char **str)
 	int	index;
 
 	index = 0;
-	if (ft_strlen2(str) == 1 || (ft_strlen2(str) != 1 \
+	if ((ft_strlen2(str) == 1) || (ft_strlen2(str) != 1 \
 	&& !ft_strcmp(str[index + 1], "\0") && !str[index + 2]))
 	{
 		ft_putchar_fd('\n', 1);
@@ -67,7 +67,7 @@ int	set_flag(char *s)
 		while (s[index] == 'n')
 			index++;
 	}
-	if (index == size && index != 1)
+	if (index == size && (index != 1 && index != 0))
 	{
 		return (1);
 	}
