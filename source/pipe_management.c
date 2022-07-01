@@ -6,7 +6,7 @@
 /*   By: ael-yamo <ael-yamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 01:52:40 by ael-yamo          #+#    #+#             */
-/*   Updated: 2022/07/01 02:30:34 by ael-yamo         ###   ########.fr       */
+/*   Updated: 2022/07/02 00:53:55 by ael-yamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,13 @@ int	**creat_pipes(int pipes_num)
 		if (pipes[i] == NULL)
 		{
 			fail_to_generat_pipes(pipes, i);
-			creat_pipes(pipes_num);
+			return (NULL);
 		}
-		pipe(pipes[i]);
+		if (pipe(pipes[i]) == -1)
+		{
+			perror("pipes limit");
+			return (NULL);
+		}
 		i++;
 	}
 	return (pipes);

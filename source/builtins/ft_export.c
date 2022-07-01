@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_export.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-yamo <ael-yamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 04:27:42 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/07/01 04:35:22 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/07/01 22:50:51 by ael-yamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	has_equal(char *str)
 {
 	if (!ft_strchr(str, '='))
 	{
-		ft_putstr_fd(str, 1);
-		ft_putchar_fd('\n', 1);
 		return (1);
 	}
 	return (0);
@@ -38,7 +36,7 @@ void	suite4(char *str)
 	ft_putstr_fd("declare -x ", 1);
 	if (has_equal(str))
 		return ;
-	while (str[i] && (str[i] == '_' || ft_isalpha(str[i])))
+	while (str[i] && (str[i] == '_' || ft_isalnum(str[i])))
 		ft_putchar_fd(str[i++], 1);
 	ft_putchar_fd(str[i++], 1);
 	ft_putchar_fd('"', 1);

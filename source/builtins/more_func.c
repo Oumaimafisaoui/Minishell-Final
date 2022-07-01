@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   more_func.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-yamo <ael-yamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 04:27:53 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/07/01 04:27:54 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/07/01 22:52:13 by ael-yamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,5 @@ int	s1(char *str)
 	index1 = 0;
 	while (str[index1] && str[index1] != '=')
 			index1++;
-	return (index1);
+	return (index1 + 1);
 }

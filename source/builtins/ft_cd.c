@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cd.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-yamo <ael-yamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 04:27:27 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/07/01 04:27:28 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/07/01 23:59:39 by ael-yamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	modify_env(char *pwd)
 
 int	ft_cd(char **path)
 {
-	char	*pwd;
 	char	*p;
 
 	if (!ft_strncmp(path[0], "CD", 2))
@@ -47,14 +46,16 @@ int	ft_cd(char **path)
 int	change_env(char *p)
 {
 	char	*pwd;
+	int		var;
 
 	pwd = join_str("OLDPWD=", g_gen.pwd);
-	if (chdir(p) != -1)
+	var = chdir(p);
+	if (var != -1)
 	{
 		if (small3(&pwd))
 			return (1);
 	}
-	else if (chdir(p) == -1)
+	else if (var == -1)
 		perror("cd");
 	if (g_gen.pwd != NULL)
 		free(g_gen.pwd);
@@ -70,6 +71,8 @@ int	ft_add_list(t_list **env_list, char *str)
 	size_t	index2;
 
 	tmp = *env_list;
+	if (!tmp)
+		return (0);
 	while (tmp)
 	{
 		index2 = s1(str);

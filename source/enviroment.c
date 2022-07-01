@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enviroment.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-yamo <ael-yamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 04:28:41 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/07/01 04:28:42 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/07/01 23:07:05 by ael-yamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_list	*env_create(char **envp)
 		tmp = ft_lstnew(s);
 		ft_lstadd_back(&head, tmp);
 		index++;
-	}
+	}	
 	return (head);
 }
 

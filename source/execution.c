@@ -6,7 +6,7 @@
 /*   By: ael-yamo <ael-yamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 01:51:52 by ael-yamo          #+#    #+#             */
-/*   Updated: 2022/07/01 17:48:24 by ael-yamo         ###   ########.fr       */
+/*   Updated: 2022/07/02 00:57:34 by ael-yamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,22 @@ void	execut(t_cmd *cmds, int **pipes, int pipes_num, int i)
 	exit(cmds[i].exec);
 }
 
+void	fork_faild(int **pipes, int pipes_num)
+{
+	free_pipes(pipes, pipes_num);
+	return ;
+}
+
 void	execution(t_cmd *cmds, int pipes_num)
 {
 	int		i;
 	int		pid;
 	int		**pipes;
-	char	*built_in;
 
 	i = 0;
 	pipes = creat_pipes(pipes_num);
+	if (pipes == NULL)
+		return ;
 	assign_pipes(pipes, &cmds, pipes_num);
 	sig_ign();
 	if (cmds[i].exec == 0 && pipes_num == 0 && is_buit_in(cmds[i].cmd_args[0]))
@@ -49,7 +56,11 @@ void	execution(t_cmd *cmds, int pipes_num)
 	else
 	{
 		while (i <= pipes_num)
+		{
 			pid = run_cmd(cmds, pipes, pipes_num, &i);
+			if (pid == -1)
+				return (fork_faild(pipes, pipes_num));
+		}
 		close_pipes(pipes, pipes_num);
 		wait_all(pid, i, pipes_num);
 	}

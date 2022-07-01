@@ -6,7 +6,7 @@
 /*   By: ael-yamo <ael-yamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 01:51:49 by ael-yamo          #+#    #+#             */
-/*   Updated: 2022/07/01 21:57:39 by ael-yamo         ###   ########.fr       */
+/*   Updated: 2022/07/02 00:56:17 by ael-yamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	run_cmd(t_cmd *cmds, int **pipes, int pipes_num, int *i)
 	if (pid == -1)
 	{
 		perror("fork : ");
-		exit(3);
+		return (-1);
 	}
 	if (pid == 0)
 	{

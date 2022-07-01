@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-yamo <ael-yamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 04:26:50 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/07/01 20:06:36 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/07/01 23:07:51 by ael-yamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,7 +227,7 @@ char		*join_cmd(char *path, char *cmd);
 void		free_all(t_list *tokens);
 int			check_nature(char *next);
 int			error(char *next);
-void			suite8(char *str);
+void		suite8(char *str);
 char		*ft_itoa1(long long n);
 int			to_num(char c);
 void		suite9(char *str);
