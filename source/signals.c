@@ -6,7 +6,7 @@
 /*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 04:28:19 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/07/01 19:38:31 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/07/01 20:07:01 by oufisaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,22 @@ int	ctrld(void)
 	rl_on_new_line();
 	rl_redisplay();
 	ft_putstr_fd("exit\n", 1);
-	//free_all(g_gen.env);
+	free_all(g_gen.env);
 	free(g_gen.pwd);
 	free_envp();
 	exit(0);
 }
 
-void	free_all(t_token *tokens)
+void	free_all(t_list *tokens)
 {
-	t_token	*tmp;
+	t_list	*tmp;
 
 	while (tokens)
 	{
 		tmp = tokens;
 		tokens = tokens->next;
-		free(tmp->data);
-		tmp->data = NULL;
+		free(tmp->content);
+		tmp->content = NULL;
 		free(tmp);
 		tmp = NULL;
 	}

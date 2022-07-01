@@ -6,7 +6,7 @@
 /*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:50:58 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/07/01 19:43:12 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/07/01 20:08:19 by oufisaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ static int	ft_intlen(long long n)
 	}
 	return (counter);
 }
+
 char	*ft_itoa1(long long n)
 {
 	long long	nbr;
-	char	*s;
-	int		l_s;
+	char		*s;
+	int			l_s;
 
 	nbr = n;
 	l_s = ft_intlen(nbr);
@@ -54,18 +55,18 @@ char	*ft_itoa1(long long n)
 	return (s);
 }
 
-int to_num(char c)
+int	to_num(char c)
 {
 	return (c -= 48);
 }
 
 int	is_long(char *next)
 {
-	int     index;
-	char    *str;
+	int		index;
+	char	*str;
 
 	index = 0;
-    str = ft_itoa1(LONG_MAX);
+	str = ft_itoa1(LONG_MAX);
 	if (ft_strlen(str) > ft_strlen(next))
 		return (0);
 	else if (ft_strlen(str) > ft_strlen(next))

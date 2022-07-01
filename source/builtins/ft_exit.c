@@ -6,11 +6,22 @@
 /*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 04:27:38 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/07/01 19:52:44 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/07/01 20:08:41 by oufisaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+void	suite9(char *str)
+{
+	if (check_valid(str) == 1)
+		g_gen.exit_status = ft_atoll(str);
+	if (check_valid(str) == 0 || is_long(str))
+	{
+		suite7(str);
+		exit(255);
+	}
+}
 
 int	ft_exit(char **next)
 {
@@ -21,13 +32,7 @@ int	ft_exit(char **next)
 	}
 	if (ft_strlen2(next) == 2)
 	{
-		if (check_valid(*(next + 1)) == 1)
-			g_gen.exit_status = ft_atoll(*(next + 1));
-		if (check_valid(*(next + 1)) == 0 || is_long(*(next + 1)))
-		{
-			suite7(*(next + 1));
-			exit(255);
-		}
+		suite9(*(next + 1));
 	}
 	if (ft_strlen2(next) > 2)
 	{
@@ -36,7 +41,7 @@ int	ft_exit(char **next)
 			suite8(*(next + 1));
 			exit(255);
 		}
-		else if(check_valid(*(next + 1)) == 1)
+		else if (check_valid(*(next + 1)) == 1)
 		{
 			suite8(*(next + 1));
 			return (1);
@@ -76,7 +81,7 @@ void	suite7(char *str)
 	g_gen.exit_status = 255;
 }
 
-void suite8(char *str)
+void	suite8(char *str)
 {
 	ft_putstr_fd("Minishell : exit : ", 2);
 	ft_putstr_fd(str, 2);
