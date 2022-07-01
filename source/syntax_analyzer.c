@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   syntax_analyzer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oufisaou <oufisaou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-yamo <ael-yamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 04:28:07 by oufisaou          #+#    #+#             */
-/*   Updated: 2022/07/01 04:28:08 by oufisaou         ###   ########.fr       */
+/*   Updated: 2022/07/01 21:58:46 by ael-yamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,24 +57,23 @@ int	check_quotes(t_token *token)
 
 int	check_inside(t_token *tmp)
 {
-	if (tmp && tmp->type == PIPE)
-	{
-		error_free(tmp->data, tmp);
-		return (0);
-	}
+	t_token	*p1;
+	t_token	*p2;
+
 	while (tmp)
 	{
 		if (tmp->type == PIPE)
 		{
-			tmp = tmp->next;
-			if (tmp == NULL)
-				return (0);
-			while (tmp && tmp->type == SPAACE)
-				tmp = tmp->next;
-			if (tmp && tmp->type == PIPE)
+			p1 = tmp->next;
+			p2 = tmp->prev;
+			while (p1 && p1->type == SPAACE)
+				p1 = p1->next;
+			while (p2 && p2->type == SPAACE)
+				p2 = p2->prev;
+			if (!p2 || (p2 && p2->type != WORD)
+				|| !p1 || (p1 && p1->type != WORD))
 			{
 				error_free(tmp->data, tmp);
-				g_gen.exit_status = 258;
 				return (0);
 			}
 		}
