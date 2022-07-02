@@ -1,4 +1,5 @@
 CC = gcc
+FLAGS = -Wall -Wextra -Werror
 NAME = minishell
 DIRBUILD = objdir
 INC  = -I ./includes
@@ -17,14 +18,14 @@ OBJ = $(addprefix $(DIRBUILD)/, $(SRC:=.o))
 
 all : $(NAME)
 $(NAME) : $(OBJ) $(LIBFT)
-	@gcc  $^ -o $(NAME) -lreadline  $(LDFLAGS)  $(LIBFT) 
+	@$(CC) $(FLAGS) $^ -o $(NAME) -lreadline  $(LDFLAGS)  $(LIBFT)
 
 $(LIBFT) :
 	@make -C includes/libft
 	
 $(DIRBUILD)/%.o : source/%.c $(HEADERS)
 	@mkdir -p $(@D)
-	@gcc $(INC) $(CPPFLAGS) -c $< -o $@
+	@$(CC) $(INC) $(CPPFLAGS) -c $< -o $@
 clean :
 	@rm -rf $(DIRBUILD)
 	@make clean -C includes/libft
