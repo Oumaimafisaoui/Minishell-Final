@@ -15,7 +15,7 @@ its purpose.<br>
 • Not interpret unclosed quotes or special characters which are not required by the
 subject such as \ (backslash) or ; (semicolon).<br>
 • Handle ’ (single quote) which should prevent the shell from interpreting the metacharacters in the quoted sequence.<br>
-• Handle " (double quote) which should prevent the shell from interpreting the metacharacters in the quoted sequence except for $ (dollar sign).<br>
+• Handle " (double quote) which should prevent the shell from interpreting the metacharacters in the quoted sequence except for $ (dollar sign).<br><br>
 Implement redirections:<br><br>
 ◦ < should redirect input.<br>
 ◦ > should redirect output.<br>
@@ -50,7 +50,11 @@ foreground pipeline.<br><br>
 - [X] Parsing
 - [X] Execution
 
+### This project needs the following dependencies installed to run:
 
-All the project ressources are documented in Miro : https://miro.com/app/board/uXjVO3ccsYw=/?share_link_id=561717126947
+https://github.com/paji1/valgrind_for_new_infra<br>
+
+### All the project ressources are documented in Miro :
+https://miro.com/app/board/uXjVO3ccsYw=/?share_link_id=561717126947
 
 <img width="531" alt="Screen Shot 2022-07-03 at 8 55 08 PM" src="https://user-images.githubusercontent.com/48260689/177055377-c17d4754-00c0-4a29-8095-de0a0ed0322b.png">
