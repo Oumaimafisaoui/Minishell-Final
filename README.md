@@ -5,7 +5,7 @@
 
 ## This project is a working implemetation of a mini shel:
 
-This shell does:<br><br>
+### This shell does:<br><br>
 • Display a prompt when waiting for a new command.<br>
 • Have a working history.<br>
 • Search and launch the right executable (based on the PATH variable or using a
@@ -16,7 +16,7 @@ its purpose.<br>
 subject such as \ (backslash) or ; (semicolon).<br>
 • Handle ’ (single quote) which should prevent the shell from interpreting the metacharacters in the quoted sequence.<br>
 • Handle " (double quote) which should prevent the shell from interpreting the metacharacters in the quoted sequence except for $ (dollar sign).<br><br>
-Implement redirections:<br><br>
+### Implement redirections:<br><br>
 ◦ < should redirect input.<br>
 ◦ > should redirect output.<br>
 ◦ << should be given a delimiter, then read the input until a line containing the
@@ -29,11 +29,11 @@ should expand to their values.<br>
 • Handle $? which should expand to the exit status of the most recently executed
 foreground pipeline.<br><br>
 • Handle ctrl-C, ctrl-D and ctrl-\ which should behave like in bash.<br>
-• In interactive mode:<br><br>
+### • In interactive mode:<br><br>
 ◦ ctrl-C displays a new prompt on a new line.<br>
 ◦ ctrl-D exits the shell.<br>
 ◦ ctrl-\ does nothing.<br>
-• Your shell must implement the following builtins:<br>
+### • Your shell must implement the following builtins:<br>
 ◦ echo with option -n<br>
 ◦ cd with only a relative or absolute path<br>
 ◦ pwd with no options<br>
