@@ -1,9 +1,6 @@
-
-
-
 # Minishell
 
-## This project is a working implemetation of a mini shel:
+## This project is a working implemetation of a mini shell:
 
 ### This shell does:<br><br>
 • Display a prompt when waiting for a new command.<br>
@@ -41,6 +38,25 @@ foreground pipeline.<br><br>
 ◦ unset with no options<br>
 ◦ env with no options or arguments<br>
 ◦ exit with no options<br>
+
+
+<h6>My tests:</h6>
+<ul>
+<li>echo $HIT $PATH</li>
+<li>echo -nnnnnnn / -n -n -n -n / </li>
+<li>echo $?</li>
+<li>exit jkfjrwnwlrlner / exit jkwfnrwnlw 97 / exit kk;rwf kfjrkrw / exit 7865 9558859</li>
+<li>ls<< lo>>file1 >> file2 | ls -la << po</li>
+<li>export ggg======tt</li>
+<li>env -i ./minishell</li>
+<li>minishell inside minishell signals</li>
+<li>long line</li>
+<li>unset PATH and inputting env and export</li>
+<li>echo ""</li>
+<li>echo "\0"</li>
+<li>cd with deleted directory</li>
+<li>>cat me >| me</li>
+</ul>
 # Project steps:<br>
 - [X] Read all ressources
 - [X] Create prompt handeler 
